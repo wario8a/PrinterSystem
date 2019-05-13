@@ -29,7 +29,7 @@ namespace PrintersSystem
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
 
             var printer = await _context.Printer
@@ -73,7 +73,7 @@ namespace PrintersSystem
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
 
             var printer = await _context.Printer.FindAsync(id);
@@ -94,7 +94,7 @@ namespace PrintersSystem
         {
             if (id != printer.Id)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
 
             if (ModelState.IsValid)
@@ -126,7 +126,7 @@ namespace PrintersSystem
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction(nameof(Index));
             }
 
             var printer = await _context.Printer

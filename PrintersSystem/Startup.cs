@@ -31,10 +31,10 @@ namespace PrintersSystem
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<PrintersSystemContext>(options => options.UseInMemoryDatabase(databaseName: "PrinterSystem"));
+            //services.AddDbContext<PrintersSystemContext>(options => options.UseInMemoryDatabase(databaseName: "PrinterSystem"));
 
-            //var connString = ConfigurationExtensions.GetConnectionString(this.Configuration, "PrintersSystemContext");
-            //services.AddDbContext<PrintersSystemContext>(options => options.UseSqlServer(connString));
+            var connString = ConfigurationExtensions.GetConnectionString(this.Configuration, "PrintersSystemContext");
+            services.AddDbContext<PrintersSystemContext>(options => options.UseSqlServer(connString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
