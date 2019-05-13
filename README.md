@@ -10,8 +10,9 @@ Maneja la creacion de Impresoras, dando los datos necesarios como Nombre, Serial
 Se peuden crear, consultar, editar y eliminar diferentes localizaciones y asignarle cada localcizacion a una impresora.
 Se pueden crear, consultar, editar y eliminar mantenimientos para cada impresora.
 
-### Enlace del proyecto:
+### Enlace del Sitio:
 http://printersystem.azurewebsites.net
 
 Sistema Creado en C# - ASP .NET Core con Base de Datos Mysql
 Backend Web Rest Api.
+Publicado en Azure Web App
