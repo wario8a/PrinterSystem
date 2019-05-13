@@ -1,0 +1,75 @@
+﻿@model PrinterManagement.Models.Location
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details Location</h1>
+
+<div>
+    <h4>Location</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+
+    @if (Model.Printers != null && Model.Printers.Count() > 0)
+    {
+        <h4>Printers in Location: @Model.Name</h4>
+
+        <div class="row">
+            <div class="col-md-offset-1 col-md-11">
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.Printers.ElementAt(0).Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.Printers.ElementAt(0).Serial)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.Printers.ElementAt(0).Model)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.Printers.ElementAt(0).PrinterType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.Printers.ElementAt(0).PersonInCharge)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model.Printers)
+                    {
+                <tr>
+                    <td>
+                        @Html.TextBoxFor(x => item.Name, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => item.Serial, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => item.Model, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => item.PrinterType, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(x => item.PersonInCharge, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                    }
+                </table>
+            </div>
+
+        </div>
+    }
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
