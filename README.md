@@ -13,6 +13,5 @@ Se pueden crear, consultar, editar y eliminar mantenimientos para cada impresora
 ### Enlace del Sitio:
 http://printersystem.azurewebsites.net
 
-Sistema Creado en C# - ASP .NET Core con Base de Datos Mysql
-Backend Web Rest Api.
+Sistema Creado en C# - ASP .NET Core 2.2 MVC con Base de Datos Mysql
 Publicado en Azure Web App
